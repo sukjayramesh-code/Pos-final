@@ -16,8 +16,8 @@ const MENU = [
   { id: 'sarbath', name: 'Sarbath (Drink)', price: 3.50, img: 'sarbath.png' }
 ];
 const ADDONS = [
-  { id: 'ham', name: 'Chicken Ham', price: 2.00 },
-  { id: 'sausage', name: 'Sausage', price: 2.50 }
+  { id: 'ham', name: 'Chicken Ham', price: 1.00 },
+  { id: 'sausage', name: 'Sausage', price: 1.00 }
 ];
 
 const DEFAULT_COSTS = {
