@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Twistello POS — Glass Theme</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body data-page="index">
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="logo-plate">🐻</div>
+      <div>
+        <h1>TWISTELLO</h1>
+        <div class="muted">Stall POS</div>
+      </div>
+    </div>
+    <nav>
+      <a class="btn" href="report.html">Reports</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel menu-panel glass">
+      <h2 class="panel-title">Menu</h2>
+      <div id="menuGrid" class="grid"></div>
+    </section>
+
+    <section class="panel addons-panel glass">
+      <h2 class="panel-title">Add-Ons</h2>
+      <div id="addonsGrid" class="grid small-grid"></div>
+    </section>
+
+    <aside class="panel cart-panel glass">
+      <h2 class="panel-title">Order — Ticket</h2>
+
+      <label class="input-label">
+        Customer name
+        <input id="customerName" type="text" placeholder="e.g. Ahmad" />
+      </label>
+
+      <div id="cartItems" class="cart-items">
+        <p class="muted">No items in cart</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cartTotal">RM0.00</strong>
+        </div>
+
+        <div class="cart-actions">
+          <button id="btnClearCart" class="btn-secondary">Clear</button>
+          <button id="btnSaveOrder" class="btn">Save Order</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <h3 class="muted">Order history</h3>
+      <div id="orderHistory" class="history-list"><p class="muted">No orders yet</p></div>
+    </aside>
+  </main>
+
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal-panel glass">
+      <button id="closeModal" class="modal-close">✕</button>
+      <h3>Touch 'n Go</h3>
+      <img src="tng_qr.png" alt="TnG QR" class="tng-qr" />
+      <p class="muted">Ask customer to scan then mark the order as Paid.</p>
+    </div>
+  </div>
+
+  <footer class="footer glass">
+    <div class="muted">Runs offline — data stored in browser (localStorage). Backup by exporting reports.</div>
+  </footer>
+</body>
+</html>

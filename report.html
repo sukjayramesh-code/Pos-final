@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Twistello — Reports</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="report">
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="logo-plate">🐻</div>
+      <div>
+        <h1>TWISTELLO</h1>
+        <div class="muted">Reports</div>
+      </div>
+    </div>
+    <nav>
+      <a class="btn" href="index.html">Back to POS</a>
+    </nav>
+  </header>
+
+  <main class="layout report-layout">
+    <section class="panel glass summary-panel">
+      <h2 class="panel-title">Summary</h2>
+      <div class="summary-grid">
+        <div class="card">
+          <div class="card-title">Revenue</div>
+          <div id="totalRevenue" class="card-value">RM0.00</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Cost</div>
+          <div id="totalCost" class="card-value">RM0.00</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Profit</div>
+          <div id="totalProfit" class="card-value">RM0.00</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Best seller</div>
+          <div id="bestSeller" class="card-value">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel glass charts-panel">
+      <h2 class="panel-title">Analytics</h2>
+      <div class="charts-row">
+        <div class="chart-card">
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <canvas id="statusChart"></canvas>
+        </div>
+      </div>
+
+      <h3 class="panel-sub">Item breakdown & costs</h3>
+      <table id="itemsTable" class="report-table">
+        <thead><tr><th>Item</th><th>Qty</th><th>Revenue</th><th>Cost/unit</th><th>Total cost</th><th>Profit</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="report-actions">
+        <button id="btnSaveCosts" class="btn">Save costs</button>
+        <button id="btnClearAll" class="btn-secondary">Clear all orders</button>
+        <button id="btnExportCSV" class="btn-secondary">Export CSV</button>
+      </div>
+
+      <h3 class="panel-sub">Review QR</h3>
+      <div class="review-row">
+        <div id="reviewQR"></div>
+        <div class="muted">Scan to leave an anonymous review (stored locally).</div>
+      </div>
+    </section>
+
+    <section class="panel glass history-panel">
+      <h2 class="panel-title">Orders</h2>
+      <div id="fullOrderList" class="history-list"><p class="muted">No orders yet</p></div>
+    </section>
+  </main>
+
+  <footer class="footer glass">
+    <div class="muted">Tip: Edit cost/unit then click Save costs to recalc profit.</div>
+  </footer>
+</body>
+</html>
